@@ -22,6 +22,16 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
     /**
+     * Override do metodo que mostra a view do login.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showLoginForm()
+    {
+        return view('auth.eVideos_auth.login');
+    }
+
+    /**
      * Where to redirect users after login.
      *
      * @var string

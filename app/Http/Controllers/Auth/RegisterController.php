@@ -25,6 +25,16 @@ class RegisterController extends Controller
     use RegistersUsers;
 
     /**
+     * Mostra a view de registrar usuario
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showRegistrationForm()
+    {
+        return view('auth.eVideos_auth.register');
+    }
+
+    /**
      * Where to redirect users after registration.
      *
      * @var string
