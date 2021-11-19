@@ -21,4 +21,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name(
 
 Route::get('/account', [App\Http\Controllers\HomeController::class, 'account'])->name('account');
 
-Route::get('/subscriptions', [App\Http\Controllers\HomeController::class, 'subscriptions'])->name('account');
+Route::get('/subscriptions', [App\Http\Controllers\HomeController::class, 'subscriptions'])->name('subscriptions');
+
+Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings'])->name('settings');
+
+Route::get('/upload', [App\Http\Controllers\HomeController::class, 'upload'])->name('upload');
+
+Route::get('/upload-video', [App\Http\Controllers\HomeController::class, 'uploadVideo'])->name('uploadVideo');

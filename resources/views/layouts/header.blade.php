@@ -18,7 +18,7 @@
     <!-- Navbar -->
     <ul class="navbar-nav ml-auto ml-md-0 osahan-right-navbar">
        <li class="nav-item mx-1">
-          <a class="nav-link" href="upload.html">
+          <a class="nav-link" href="/upload">
           <i class="fas fa-plus-circle fa-fw"></i>
           Enviar Video
           </a>

@@ -31,6 +31,22 @@ class HomeController extends Controller
     {
         return view('subscriptions');
     }
+
+    public function settings()
+    {
+        return view('settings');
+    }
+
+    public function upload()
+    {
+        return view('upload');
+    }
+
+    public function uploadVideo()
+    {
+        return view('uploadVideo');
+    }
+
     /**
      * Show the application dashboard.
      *
