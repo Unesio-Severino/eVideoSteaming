@@ -38,3 +38,5 @@ Route::get('/single-channel', [App\Http\Controllers\HomeController::class, 'sing
 Route::get('/video-page', [App\Http\Controllers\HomeController::class, 'videoPage'])->name('videoPage');
 
 Route::get('/history-page', [App\Http\Controllers\HomeController::class, 'historyPage'])->name('historyPage');
+
+Route::post('/profile/update', [App\Http\Controllers\ProfileController::class, 'updateProfile'])->name('profile.update');
