@@ -11,7 +11,21 @@
           <div class="modal-body">Se confirma o encerramento clica em sair.</div>
           <div class="modal-footer">
              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-             <a class="btn btn-primary" href="login.html">Confirma</a>
+
+             {{-- //funcao responsavel por chamar o dialogo de confirmar saida --}}
+             <span>
+                <a class="btn btn-primary" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    Confirmo
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </span>
+
+             {{-- <a class="btn btn-primary" href="login.html">Confirma</a> --}}
           </div>
        </div>
     </div>
