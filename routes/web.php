@@ -35,3 +35,6 @@ Route::get('/channels', [App\Http\Controllers\HomeController::class, 'channels']
 
 Route::get('/single-channel', [App\Http\Controllers\HomeController::class, 'singleChannel'])->name('singleChannel');
 
+Route::get('/video-page', [App\Http\Controllers\HomeController::class, 'videoPage'])->name('videoPage');
+
+Route::get('/history-page', [App\Http\Controllers\HomeController::class, 'historyPage'])->name('historyPage');

@@ -1,5 +1,5 @@
    <!-- Sticky Footer -->
-<footer class="sticky-footer">
+   <footer class="sticky-footer">
     <div class="container">
        <div class="row no-gutters">
           <div class="col-lg-6 col-sm-6">

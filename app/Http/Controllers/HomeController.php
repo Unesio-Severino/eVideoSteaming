@@ -26,7 +26,6 @@ class HomeController extends Controller
         return view('account');
     }
 
-
     public function subscriptions()
     {
         return view('subscriptions');
@@ -61,6 +60,17 @@ class HomeController extends Controller
     {
         return view('singleChannel');
     }
+
+    public function videoPage()
+    {
+        return view('videoPage');
+    }
+
+    public function historyPage()
+    {
+        return view('historyPage');
+    }
+
     /**
      * Show the application dashboard.
      *
