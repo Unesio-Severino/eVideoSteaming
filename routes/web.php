@@ -32,3 +32,6 @@ Route::get('/upload-video', [App\Http\Controllers\HomeController::class, 'upload
 Route::get('/categories', [App\Http\Controllers\HomeController::class, 'categories'])->name('categories');
 
 Route::get('/channels', [App\Http\Controllers\HomeController::class, 'channels'])->name('channels');
+
+Route::get('/single-channel', [App\Http\Controllers\HomeController::class, 'singleChannel'])->name('singleChannel');
+

@@ -49,7 +49,7 @@
         </div>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="history-page.html">
+        <a class="nav-link" href="/history-page">
             <i class="fas fa-fw fa-history"></i>
             <span>History Page</span>
         </a>
