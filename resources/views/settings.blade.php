@@ -3,44 +3,86 @@
 @section('content')
 <!-- /.content-wrapper -->
 <div id="content-wrapper">
-    <div class="container-fluid upload-details">
+    <div class="container-fluid upload-details" style="min-height: 515px">
        <div class="row">
           <div class="col-lg-12">
              <div class="main-title">
-                <h6>Settings</h6>
+                <h6>Definicoes</h6>
              </div>
           </div>
        </div>
-       <form>
+
+
+       <!-- /.Funcao de alerta de mensagem de sucesso -->
+        @if (session('message'))
+
+            @include('alerts_messages.sucess-messages')
+
+        @endif
+
+
+       <form method="POST" action="{{ route('profile.update') }}">
+           @csrf
           <div class="row">
              <div class="col-sm-6">
                 <div class="form-group">
-                   <label class="control-label">First Name <span class="required">*</span></label>
-                   <input class="form-control border-form-control" value="" placeholder="Gurdeep" type="text">
+                   <label class="control-label">Name: <span class="required">*</span></label>
+                   <input name="name" class="form-control border-form-control @error('name') is-invalid @enderror" value="{{ old('name') ? old ('name') : auth()->user()->name }}" required autocomplete="name" type="text">
+
+                        @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+
                 </div>
              </div>
              <div class="col-sm-6">
                 <div class="form-group">
-                   <label class="control-label">Last Name <span class="required">*</span></label>
-                   <input class="form-control border-form-control" value="" placeholder="Osahan" type="text">
-                </div>
+                    <label class="control-label">Telefone: <span class="required">*</span></label>
+                    <input name="telefone" class="form-control border-form-control @error('telefone') is-invalid @enderror" value="{{ old('telefone') ? old ('telefone') : auth()->user()->telefone }}" required autocomplete="telefone" type="tel">
+
+                         @error('telefone')
+                             <span class="invalid-feedback" role="alert">
+                                 <strong>{{ $message }}</strong>
+                             </span>
+                         @enderror
+
+                 </div>
              </div>
           </div>
-          <div class="row">
-             <div class="col-sm-6">
+
+        <div class="row">
+            <div class="col-sm-6">
                 <div class="form-group">
-                   <label class="control-label">Phone <span class="required">*</span></label>
-                   <input class="form-control border-form-control" value="" placeholder="123 456 7890" type="number">
+                <label class="control-label">Email: <span class="required">*</span></label>
+                <input class="form-control border-form-control " value="{{ auth()->user()->email }}"  disabled="" type="email">
                 </div>
-             </div>
-             <div class="col-sm-6">
-                <div class="form-group">
-                   <label class="control-label">Email Address <span class="required">*</span></label>
-                   <input class="form-control border-form-control " value="" placeholder="iamosahan@gmail.com" disabled="" type="email">
-                </div>
-             </div>
-          </div>
-          <div class="row">
+            </div>
+
+            <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Sexo: <span class="required">*</span></label>
+                        <div>
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="radio"  value="M" {{ old('gender') === 'M' || auth()->user()->gender === 'M' ? 'checked' : '' }} name="gender" id="gender1">
+                                <label class="form-check-label" for="gender1">
+                                  Masculino
+                                </label>
+                              </div>
+                              <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" value="F" {{ old('gender') === 'F' || auth()->user()->gender  === 'F' ? 'checked' : '' }} name="gender" id="gender2">
+                                <label class="form-check-label" for="gender2">
+                                  Femenino
+                                </label>
+                              </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+
+          {{-- <div class="row">
              <div class="col-sm-6">
                 <div class="form-group">
                    <label class="control-label">Country <span class="required">*</span></label>
@@ -330,19 +372,22 @@
                    </select>
                 </div>
              </div>
-          </div>
+          </div> --}}
+
           <div class="row">
              <div class="col-sm-12">
                 <div class="form-group">
-                   <label class="control-label">Address <span class="required">*</span></label>
-                   <textarea class="form-control border-form-control"></textarea>
+                   <label class="control-label">Endereco: <span class="required">*</span></label>
+                   <textarea name="address" class="form-control border-form-control">
+                       {{ old('address') ? old('address') : auth()->user()->address }}
+                   </textarea>
                 </div>
              </div>
           </div>
           <div class="row">
              <div class="col-sm-12 text-right">
-                <button type="button" class="btn btn-danger border-none"> Cencel </button>
-                <button type="button" class="btn btn-success border-none"> Save Changes </button>
+                <button type="button" class="btn btn-danger border-none"> Cancelar </button>
+                <button type="submit" class="btn btn-success border-none"> Actualizar </button>
              </div>
           </div>
        </form>
