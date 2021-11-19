@@ -47,6 +47,15 @@ class HomeController extends Controller
         return view('uploadVideo');
     }
 
+    public function categories()
+    {
+        return view('categories');
+    }
+
+    public function channels()
+    {
+        return view('channels');
+    }
     /**
      * Show the application dashboard.
      *

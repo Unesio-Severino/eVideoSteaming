@@ -8,25 +8,25 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="channels.html">
+        <a class="nav-link" href="/channels">
             <i class="fas fa-fw fa-users"></i>
             <span>Channels</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="single-channel.html">
+        <a class="nav-link" href="/single-channel">
             <i class="fas fa-fw fa-user-alt"></i>
             <span>Single Channel</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="video-page.html">
+        <a class="nav-link" href="/video-page">
             <i class="fas fa-fw fa-video"></i>
             <span>Video Page</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="upload-video.html">
+        <a class="nav-link" href="/upload-video">
             <i class="fas fa-fw fa-cloud-upload-alt"></i>
             <span>Upload Video</span>
         </a>
@@ -61,9 +61,9 @@
             <span>Categories</span>
         </a>
         <div class="dropdown-menu">
-            <a class="dropdown-item" href="categories.html">Movie</a>
-            <a class="dropdown-item" href="categories.html">Music</a>
-            <a class="dropdown-item" href="categories.html">Television</a>
+            <a class="dropdown-item" href="/categories">Movie</a>
+            <a class="dropdown-item" href="/categories">Music</a>
+            <a class="dropdown-item" href="/categories">Television</a>
         </div>
     </li>
     <li class="nav-item channel-sidebar-list">

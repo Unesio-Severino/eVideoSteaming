@@ -414,9 +414,9 @@
                   </div>
                </div>
     </div>
-            <!-- /.container-fluid -->
-            <!-- Sticky Footer -->
-            @include('layouts.Footer')
+
+        <!-- Sticky Footer -->
+        @include('layouts.Footer')
 </div>
 <!-- /.content-wrapper -->
 @endsection

@@ -28,3 +28,7 @@ Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings']
 Route::get('/upload', [App\Http\Controllers\HomeController::class, 'upload'])->name('upload');
 
 Route::get('/upload-video', [App\Http\Controllers\HomeController::class, 'uploadVideo'])->name('uploadVideo');
+
+Route::get('/categories', [App\Http\Controllers\HomeController::class, 'categories'])->name('categories');
+
+Route::get('/channels', [App\Http\Controllers\HomeController::class, 'channels'])->name('channels');
