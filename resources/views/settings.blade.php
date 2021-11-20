@@ -21,36 +21,58 @@
         @endif
 
 
-       <form method="POST" action="{{ route('profile.update') }}">
+       <form method="POST" action="{{ route('profile.update') }}" role="form" enctype="multipart/form-data">
            @csrf
+
           <div class="row">
-             <div class="col-sm-6">
-                <div class="form-group">
-                   <label class="control-label">Name: <span class="required">*</span></label>
-                   <input name="name" class="form-control border-form-control @error('name') is-invalid @enderror" value="{{ old('name') ? old ('name') : auth()->user()->name }}" required autocomplete="name" type="text">
 
-                        @error('name')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+            <div class="col-sm-6">
+                <img class="rounded-circle avatar-image" alt="" src="{{ asset('assets/img/s1.png') }}">
+            </div>
 
-                </div>
-             </div>
-             <div class="col-sm-6">
-                <div class="form-group">
-                    <label class="control-label">Telefone: <span class="required">*</span></label>
-                    <input name="telefone" class="form-control border-form-control @error('telefone') is-invalid @enderror" value="{{ old('telefone') ? old ('telefone') : auth()->user()->telefone }}" required autocomplete="telefone" type="tel">
+                    <div class="col-sm-12 mt-4">
+                        <div class="form-group">
+                            <label class="control-label">Carregar Foto de Perfil: <span class="required">*</span></label>
+                            <input name="avatar" class="form-control avatar-input border-form-control @error('avatar') is-invalid @enderror" value="{{ old('avatar') ? old ('avatar') : '' }}" required autocomplete="avatar" type="file">
 
-                         @error('telefone')
-                             <span class="invalid-feedback" role="alert">
-                                 <strong>{{ $message }}</strong>
-                             </span>
-                         @enderror
+                                @error('avatar')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
 
-                 </div>
-             </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                        <label class="control-label">Name: <span class="required">*</span></label>
+                        <input name="name" class="form-control border-form-control @error('name') is-invalid @enderror" value="{{ old('name') ? old ('name') : auth()->user()->name }}" required autocomplete="name" type="text">
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label">Telefone: <span class="required">*</span></label>
+                            <input name="telefone" class="form-control border-form-control @error('telefone') is-invalid @enderror" value="{{ old('telefone') ? old ('telefone') : auth()->user()->telefone }}" required autocomplete="telefone" type="tel">
+
+                                @error('telefone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
+                        </div>
+                    </div>
           </div>
+
+
 
         <div class="row">
             <div class="col-sm-6">
