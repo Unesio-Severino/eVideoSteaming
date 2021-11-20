@@ -27,7 +27,8 @@
           <div class="row">
 
             <div class="col-sm-6">
-                <img class="rounded-circle avatar-image" alt="" src="{{ asset('assets/img/s1.png') }}">
+                <img class="rounded-circle avatar-image" alt="" src="{{ asset('storage'. auth()->user()->avatar) }}" style="height: 130px; width: 123px;">
+                {{-- <img class="rounded-circle avatar-image" alt="" src="{{ asset('assets/img/s1.png') }}"> --}}
             </div>
 
                     <div class="col-sm-12 mt-4">
