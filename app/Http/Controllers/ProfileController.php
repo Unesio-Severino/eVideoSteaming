@@ -2,20 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Traits\UploadFiles;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 
-use App\User;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
-use App\Traits;\UploadFiles;
+
+
 
 class ProfileController extends Controller
 {
     use UploadFiles;
 
-    public function updateProfile(Request $request)
+    public function updateProfile (Request $request)
     {
         //Metodos para validar campos
-        $validated = $request->validate([
+        $validatedData   = $request->validate([
             'name'       => 'required|min:2|max:255',
             'telefone'   => 'nullable|min:9',
             'gender'     => 'nullable|min:1|max:1',
@@ -25,7 +27,7 @@ class ProfileController extends Controller
         //Metodos para atualizar o user
         $user = User::find (auth()->id());
 
-        $user = this->handleAvatarUpload($request, $user)
+        $user = this->handleAvatarUpload($request, $user);
 
         $user->name       = $request->name;
         $user->telefone   = $request->telefone;
@@ -37,13 +39,15 @@ class ProfileController extends Controller
         return redirect()->back()->with(['message' => 'Perfil Atualizado com sucesso.']);
     }
 
-    private function handleAvatarUpload (Request $request, User $user)
+
+
+    private function handleAvatarUpload(Request $request, User $user)
     {
-        $avatarInputName = 'avatar'
+
         // Check if a profile image has been uploaded
-        if ($request->has(' avatar')) {
+        if ($request->has('avatar')) {
             // Get image file
-            $image = $request->file(' avatar');
+            $image = $request->file('avatar');
             // Make a image name based on user name and current timestamp
             $name = Str::slug($request->input('name')).'_'.time();
             // Define folder path
@@ -54,7 +58,8 @@ class ProfileController extends Controller
             $this->uploadImage($image, $folder, 'public', $name);
 
             //verifica se existe ficheiros de fotos relacionadas se nao ele apaga tudo desnecessário e apaga image.
-                if ($user->avatar) {
+
+            if ($user->avatar) {
                     $this->deleteImage($folder, 'public', explode('/', $user->avatar) [3]);
                 }
 
