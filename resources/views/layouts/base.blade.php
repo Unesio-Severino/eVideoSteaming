@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Askbootstrap">
     <meta name="author" content="Askbootstrap">
-    <title>VIDOE - Video Streaming Website HTML Template</title>
+    <title>VIDEO STEAMING APPLICATION</title>
     <!-- Favicon Icon -->
     <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
     <!-- Bootstrap core CSS-->
@@ -51,5 +51,6 @@
     <script src="{{ asset('assets/vendor/owl-carousel/owl.carousel.js') }}"></script>
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('assets/js/custom.js') }}"></script>
+    <script src="{{ asset('js/evideos.js') }}"></script>
 </body>
 </html>
