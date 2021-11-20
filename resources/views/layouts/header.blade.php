@@ -49,7 +49,14 @@
        </li>
        <li class="nav-item dropdown no-arrow osahan-right-navbar-user">
           <a class="nav-link dropdown-toggle user-dropdown-link" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img alt="Avatar" src="{{ asset('storage'. auth()->user()->avatar) }}">
+
+            {{-- condicao para verificar se usuario tem ou nao foto de perfil --}}
+            @if (auth()->user()->avatar)
+                <img alt="Avatar" src="{{ asset('storage'. auth()->user()->avatar) }}">
+            @else
+                <img alt="Avatar" src="{{ asset('assets/img/User3.png') }}">
+            @endif
+            
             {{-- //para colocar nome do usuario que atualmente autenticado --}}
                  {{ auth()->user()->name }}
           </a>

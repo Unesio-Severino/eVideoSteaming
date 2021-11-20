@@ -27,8 +27,16 @@
           <div class="row">
 
             <div class="col-sm-6">
-                <img class="rounded-circle avatar-image" alt="" src="{{ asset('storage'. auth()->user()->avatar) }}" style="height: 130px; width: 123px;">
-                {{-- <img class="rounded-circle avatar-image" alt="" src="{{ asset('assets/img/s1.png') }}"> --}}
+
+                    {{-- condicao para verificar se usuario tem ou nao foto de perfil --}}
+                    @if (auth()->user()->avatar)
+                         <img class="rounded-circle avatar-image" alt="" src="{{ asset('storage'. auth()->user()->avatar) }}" style="height: 130px; width: 123px;">
+                    @else
+                        <img class="rounded-circle avatar-image" alt="" src="{{ asset('assets/img/User3.png') }}" style="height: 130px; width: 123px;">
+                    @endif
+
+                {{-- <img class="rounded-circle avatar-image" alt="" src="{{ asset('storage'. auth()->user()->avatar) }}" style="height: 130px; width: 123px;">
+                <img class="rounded-circle avatar-image" alt="" src="{{ asset('assets/img/User3.png') }}" style="height: 130px; width: 123px;"> --}}
             </div>
 
                     <div class="col-sm-12 mt-4">
