@@ -36,6 +36,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
+    //Personalizacao de envio de email de confirmacao
     public function sendEmailVerificationNotification()
     {
         $this->notify(new \App\Notifications\Auth\SendConfirmationEmail($this));
