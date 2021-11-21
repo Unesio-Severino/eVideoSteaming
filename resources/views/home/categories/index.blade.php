@@ -9,10 +9,16 @@
            <div class="row">
               <div class="col-md-12">
                  <div class="main-title">
+
                     <div class="btn-group float-right right-action">
-                       <a href="#" class="right-action-link text-gray" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       Sort by <i class="fa fa-caret-down" aria-hidden="true"></i>
-                       </a>
+
+                            <a href="/categories/create" class="" style="margin-right: 20px">
+                                Adicionar <i class="fa fa-plus" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="#" class="right-action-link text-gray" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Sort by <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            </a>
                        <div class="dropdown-menu dropdown-menu-right">
                           <a class="dropdown-item" href="#"><i class="fas fa-fw fa-star"></i> &nbsp; Top Rated</a>
                           <a class="dropdown-item" href="#"><i class="fas fa-fw fa-signal"></i> &nbsp; Viewed</a>

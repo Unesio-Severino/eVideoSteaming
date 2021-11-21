@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,31 +13,57 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes(['verify' => true]);
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index')->middleware('verified');
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
-
-Route::get('/account', [App\Http\Controllers\HomeController::class, 'account'])->name('account');
-
-Route::get('/subscriptions', [App\Http\Controllers\HomeController::class, 'subscriptions'])->name('subscriptions');
-
-Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings'])->name('settings');
-
-Route::get('/upload', [App\Http\Controllers\HomeController::class, 'upload'])->name('upload');
-
-Route::get('/upload-video', [App\Http\Controllers\HomeController::class, 'uploadVideo'])->name('uploadVideo');
-
-Route::get('/categories', [App\Http\Controllers\HomeController::class, 'categories'])->name('categories');
-
-Route::get('/channels', [App\Http\Controllers\HomeController::class, 'channels'])->name('channels');
-
-Route::get('/single-channel', [App\Http\Controllers\HomeController::class, 'singleChannel'])->name('singleChannel');
-
-Route::get('/video-page', [App\Http\Controllers\HomeController::class, 'videoPage'])->name('videoPage');
-
-Route::get('/history-page', [App\Http\Controllers\HomeController::class, 'historyPage'])->name('historyPage');
+Auth::routes(['verify' => true]);
 
 
-Route::post('/profile/update', [App\Http\Controllers\ProfileController::class, 'updateProfile'])->name('profile.update');
+
+
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+
+
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
+
+
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
+
+
+    Route::get('/account', [App\Http\Controllers\HomeController::class, 'account'])->name('account');
+
+
+    Route::get('/subscriptions', [App\Http\Controllers\HomeController::class, 'subscriptions'])->name('subscriptions');
+
+
+    Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings'])->name('settings');
+
+
+    Route::get('/upload', [App\Http\Controllers\HomeController::class, 'upload'])->name('upload');
+
+
+    Route::get('/upload-video', [App\Http\Controllers\HomeController::class, 'uploadVideo'])->name('uploadVideo');
+
+
+    // Route::get('/categories', [App\Http\Controllers\HomeController::class, 'categories'])->name('categories');
+
+
+    Route::get('/channels', [App\Http\Controllers\HomeController::class, 'channels'])->name('channels');
+
+
+    Route::get('/single-channel', [App\Http\Controllers\HomeController::class, 'singleChannel'])->name('singleChannel');
+
+
+    Route::post('/profile/update', [App\Http\Controllers\ProfileController::class, 'profile.update'])->name('profile.update');
+
+
+    /* Novas funcionalidades usando Resources */
+
+    Route::resource('categories', App\Http\Controllers\CategoryController::class);
+
+    Route::resource('courses', App\Http\Controllers\CourseController::class);
+
+    Route::resource('channels', App\Http\Controllers\ChannelController::class);
+
+    Route::resource('videos', App\Http\Controllers\VideoController::class);
+
+
+

@@ -86,10 +86,6 @@ class HomeController extends Controller
     }
 
 
-        public function categories()
-    {
-        return view('categories');
-    }
 
 
 }
