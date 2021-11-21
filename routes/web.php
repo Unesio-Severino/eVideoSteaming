@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index')->middleware('verified');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
 
@@ -38,5 +38,6 @@ Route::get('/single-channel', [App\Http\Controllers\HomeController::class, 'sing
 Route::get('/video-page', [App\Http\Controllers\HomeController::class, 'videoPage'])->name('videoPage');
 
 Route::get('/history-page', [App\Http\Controllers\HomeController::class, 'historyPage'])->name('historyPage');
+
 
 Route::post('/profile/update', [App\Http\Controllers\ProfileController::class, 'updateProfile'])->name('profile.update');
