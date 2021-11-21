@@ -52,7 +52,7 @@ Auth::routes(['verify' => true]);
     Route::get('/single-channel', [App\Http\Controllers\HomeController::class, 'singleChannel'])->name('singleChannel');
 
 
-    Route::post('/profile/update', [App\Http\Controllers\ProfileController::class, 'profile.update'])->name('profile.update');
+    Route::post('/profile/update', [App\Http\Controllers\ProfileController::class, 'updateProfile'])->name('profile.update');
 
 
     /* Novas funcionalidades usando Resources */
