@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Category;
+use App\Traits\UploadFiles;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+
 
 class CategoryController extends Controller
 {
+
+    use UploadFiles;
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +21,8 @@ class CategoryController extends Controller
 
     public function index()
     {
-        return view('home.categories.index');
+        $categories = Category::all();
+        return view('home.categories.index', compact('categories'));
     }
 
     /**
@@ -25,7 +32,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+       return view('home.categories.create');
     }
 
     /**
@@ -36,7 +43,55 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+
+        $validatedData = $request->validate([
+            'name'        => 'required|min:2|max:50',
+            'description' => 'nullable|min:5',
+        ]);
+
+        $category = new Category();
+
+        $category = $this->handleImageUpload($request, $category);
+
+        $category->name = $request->name;
+        $category->description = $request->description;
+        $category->user_id = auth()->id();
+
+        $category->save();
+
+        // dd($request->all(), $user);
+
+        return redirect()->back()->with(['message' => 'Categoria adicionada com sucesso']);
+
+    }
+
+    private function handleImageUpload(Request $request, Category $category){
+
+        // Check if a profile image has been uploaded
+        if ($request->has('image')) {
+            // Get image file
+            $image = $request->file('image');
+            // Make a image name based on user name and current timestamp
+            $name = Str::slug($request->input('name')).'_'.time();
+            // Define folder path
+            $folder = '/uploads/categories/';
+            // Make a file path where image will be stored [ folder path + file name + file extension]
+            $filePath = $folder . $name. '.' . $image->getClientOriginalExtension();
+            // Upload image
+            $this->uploadImage($image, $folder, 'public', $name);
+
+
+            // // Apagar a imagem que estava associada ao usuario anteriormente
+            if($category->image && $category->image !== 'assets/img/s2.png') {
+                $this->deleteImage($folder, 'public', explode('/', $category->image)[3]);
+            }
+
+            // Set user profile image path in database to filePath
+            $category->image = $filePath;
+        }
+
+            return $category;
     }
 
     /**
@@ -50,37 +105,52 @@ class CategoryController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Category $category)
     {
-        //
+        // dd($category->description);
+        return view('home.categories.edit', compact('category') );
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
+     * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Category $category)
     {
-        //
+        // dd($category, $request->all());
+        $validatedData = $request->validate([
+            'name' => 'required|min:2|max:50',
+            'description' => 'nullable|min:5',
+        ]);
+
+        $category = $this->handleImageUpload($request, $category);
+
+        $category->name = $request->name;
+        $category->description = $request->description;
+
+        $category->save();
+
+        // dd($request->all(), $user);
+
+        return redirect()->back()->with(['message' => 'Categoria ('.$category->id.') atualizada com sucesso']);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
     public function destroy(Category $category)
     {
-        //
+        $message = 'Categoria '.$category->name.' deletada com sucesso';
+
+        $category->delete();
+
+        return redirect()->to('/categories')->with(['message' => $message]);
     }
 }
+
