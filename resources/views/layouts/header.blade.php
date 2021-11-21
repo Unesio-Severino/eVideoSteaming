@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand navbar-light bg-white static-top osahan-nav sticky-top">
-    &nbsp;&nbsp;
+
     <button class="btn btn-link btn-sm text-secondary order-1 order-sm-0" id="sidebarToggle">
     <i class="fas fa-bars"></i>
-    </button> &nbsp;&nbsp;
+    </button>
     <a class="navbar-brand mr-1" href="index.html"><img class="img-fluid" alt="" src="{{ asset('assets/img/logo.png') }}"></a>
     <!-- Navbar Search -->
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-5 my-2 my-md-0 osahan-navbar-search">
@@ -29,10 +29,10 @@
           <span class="badge badge-danger">9+</span>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
-             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-edit "></i> &nbsp; Acção</a>
-             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-headphones-alt "></i> &nbsp; Outras acções</a>
+             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-edit "></i>Acção</a>
+             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-headphones-alt "></i>Outras acções</a>
              <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-star "></i> &nbsp; Alguma coisa aqui</a>
+             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-star "></i>Alguma coisa aqui</a>
           </div>
        </li>
        <li class="nav-item dropdown no-arrow mx-1">
@@ -41,10 +41,10 @@
           <span class="badge badge-success">7</span>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
-             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-edit "></i> &nbsp; Acção</a>
-             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-headphones-alt "></i> &nbsp; Outras acções</a>
+             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-edit "></i>Acção</a>
+             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-headphones-alt "></i>Outras acções</a>
              <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-star "></i> &nbsp; Alguma coisa aqui</a>
+             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-star "></i>Alguma coisa aqui</a>
           </div>
        </li>
        <li class="nav-item dropdown no-arrow osahan-right-navbar-user">
@@ -56,16 +56,16 @@
             @else
                 <img alt="Avatar" src="{{ asset('assets/img/User3.png') }}">
             @endif
-            
+
             {{-- //para colocar nome do usuario que atualmente autenticado --}}
                  {{ auth()->user()->name }}
           </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-             <a class="dropdown-item" href="/account"><i class="fas fa-fw fa-user-circle"></i> &nbsp; Minha Conta</a>
-             <a class="dropdown-item" href="/subscriptions"><i class="fas fa-fw fa-video"></i> &nbsp; Subscrições</a>
-             <a class="dropdown-item" href="/settings"><i class="fas fa-fw fa-cog"></i> &nbsp; Configurações</a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown" ml-2>
+             <a class="dropdown-item" href="/account" ml-2><i class="fas fa-fw fa-user-circle"></i> Minha Conta</a>
+             <a class="dropdown-item" href="/subscriptions" ml-2><i class="fas fa-fw fa-video"></i> Subscrições</a>
+             <a class="dropdown-item" href="/settings" ml-2><i class="fas fa-fw fa-cog"></i> Configurações</a>
              <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-fw fa-sign-out-alt"></i> &nbsp; Sair</a>
+             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal" ml-2><i class="fas fa-fw fa-sign-out-alt"></i> Sair</a>
           </div>
        </li>
     </ul>
