@@ -23,7 +23,7 @@
                   @if(auth()->user()->avatar)
                          <img class="rounded-circle avatar-image" alt="Avatar" src="{{ asset('storage'. auth()->user()->avatar) }}" style="heigh:130px; width: 130px;">
                   @else
-                        <img class="rounded-circle avatar-image" alt="Avatar" src="{{ asset('assets/img/user.png') }}" style="heigh:130px; width:130px;">
+                        <img class="rounded-circle avatar-image" alt="Avatar" src="{{ asset('assets/img/User3.png') }}" style="heigh:130px; width:130px;">
                   @endif
                 </div>
                 <div class="col-sm-12 mt-4">
