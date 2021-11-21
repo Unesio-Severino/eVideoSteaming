@@ -36,7 +36,7 @@ class ProfileController extends Controller
 
         // dd($request->all(), $user);
 
-        return redirect()->back()->with(['message' => 'Perfil actualizado com sucesso']);
+        return redirect()->back()->with(['message' => 'Perfil atualizado com sucesso']);
 
     }
 
@@ -60,7 +60,7 @@ class ProfileController extends Controller
             if($user->avatar){
                 $this->deleteImage($folder, 'public', explode('/', $user->avatar)[3]);
             }
-            
+
             // Set user profile image path in database to filePath
             $user->avatar = $filePath;
         }
