@@ -43,8 +43,8 @@ class HomeController extends Controller
     {
         return view('subscriptions');
     }
-    
-    
+
+
         public function settings()
     {
         return view('settings');
@@ -60,19 +60,19 @@ class HomeController extends Controller
         public function uploadVideo()
     {
         return view('uploadVideo');
-    }  
-    
-        
-    //     public function channels()
-    // {
-    //     return view('channels');
-    // }
-    
-    
-    //     public function singleChannel()
-    // {
-    //     return view('home.channels.show');
-    // }
+    }
+
+
+        public function channels()
+    {
+        return view('channels');
+    }
+
+
+        public function singleChannel()
+    {
+        return view('home.channels.show');
+    }
 
     public function videoPage()
     {
@@ -84,12 +84,12 @@ class HomeController extends Controller
     {
         return view('historyPage');
     }
-    
-        
-    //     public function categories()
-    // {
-    //     return view('categories');
-    // }
 
-    
+
+        public function categories()
+    {
+        return view('categories');
+    }
+
+
 }
