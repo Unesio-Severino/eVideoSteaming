@@ -134,7 +134,6 @@ class ChannelController extends Controller
 
         $channel->name = $request->name;
         $channel->description = $request->description;
-        // $channel->user_id = auth()->id();
 
         $channel->save();
 
@@ -151,8 +150,9 @@ class ChannelController extends Controller
      */
     public function destroy(Channel $channel)
     {
-        $message = 'Canal deletado com sucesso';
+        // $channel = Channel::find($channel);
 
+        $message = 'Canal deletado com sucesso';
 
         $channel->delete();
 

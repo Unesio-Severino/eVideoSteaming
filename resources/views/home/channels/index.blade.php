@@ -61,12 +61,12 @@
 
                    <div class="channels-card-body">
                       <div class="channels-title">
-                      <a href="/channels/{{ $channel->id }}">
-                         {{ $channel->name }}
+                                <a href="/channels/{{ $channel->id }}">
+                                {{ $channel->name }}
 
-                        @if($channel->user_id === auth()->id())
-                           <span title="" data-placement="top" data-toggle="tooltip" data-original-title="Verified"><i class="fas fa-check-circle"></i></span></a>
-                        @endif
+                                @if($channel->user_id === auth()->id())
+                                    <span title="" data-placement="top" data-toggle="tooltip" data-original-title="Verified"><i class="fas fa-check-circle"></i></span></a>
+                                @endif
                       </div>
                       <div class="channels-view">
                          0 subscrições
