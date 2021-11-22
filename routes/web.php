@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 Auth::routes(['verify' => true]);
 
 
+    Route::middleware(['verified'])->group(function (){
+
 
 
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
@@ -55,7 +57,7 @@ Auth::routes(['verify' => true]);
     Route::post('/profile/update', [App\Http\Controllers\ProfileController::class, 'updateProfile'])->name('profile.update');
 
 
-    /* Novas funcionalidades usando Resources */
+      /* Novas funcionalidades usando Resources */
 
     Route::resource('categories', App\Http\Controllers\CategoryController::class);
 
@@ -64,6 +66,11 @@ Auth::routes(['verify' => true]);
     Route::resource('channels', App\Http\Controllers\ChannelController::class);
 
     Route::resource('videos', App\Http\Controllers\VideoController::class);
+
+
+    });
+
+
 
 
 
