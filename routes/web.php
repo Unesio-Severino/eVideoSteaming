@@ -17,7 +17,12 @@ use Illuminate\Support\Facades\Route;
 Auth::routes(['verify' => true]);
 
 
-    Route::middleware(['verified'])->group(function (){
+    // Route::middleware(['verified'])->group(function (){
+
+
+
+
+    // });
 
 
 
@@ -47,11 +52,11 @@ Auth::routes(['verify' => true]);
 
     // Route::get('/categories', [App\Http\Controllers\HomeController::class, 'categories'])->name('categories');
 
+    // Route::get('/single-channel', [App\Http\Controllers\HomeController::class, 'singleChannel'])->name('singleChannel');
 
     Route::get('/channels', [App\Http\Controllers\HomeController::class, 'channels'])->name('channels');
 
 
-    Route::get('/single-channel', [App\Http\Controllers\HomeController::class, 'singleChannel'])->name('singleChannel');
 
 
     Route::post('/profile/update', [App\Http\Controllers\ProfileController::class, 'updateProfile'])->name('profile.update');
@@ -66,9 +71,6 @@ Auth::routes(['verify' => true]);
     Route::resource('channels', App\Http\Controllers\ChannelController::class);
 
     Route::resource('videos', App\Http\Controllers\VideoController::class);
-
-
-    });
 
 
 

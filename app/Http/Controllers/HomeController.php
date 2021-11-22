@@ -45,34 +45,24 @@ class HomeController extends Controller
     }
 
 
-        public function settings()
+    public function settings()
     {
         return view('settings');
     }
 
 
-        public function upload()
+    public function upload()
     {
         return view('upload');
     }
 
 
-        public function uploadVideo()
+    public function uploadVideo()
     {
         return view('uploadVideo');
     }
 
 
-        public function channels()
-    {
-        return view('channels');
-    }
-
-
-        public function singleChannel()
-    {
-        return view('home.channels.show');
-    }
 
     public function videoPage()
     {
@@ -80,12 +70,8 @@ class HomeController extends Controller
     }
 
 
-        public function historyPage()
+    public function historyPage()
     {
         return view('historyPage');
     }
-
-
-
-
 }

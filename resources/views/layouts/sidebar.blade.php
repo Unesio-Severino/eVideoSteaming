@@ -14,7 +14,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/single-channel">
+        <a class="nav-link" href="/channels/ID">
             <i class="fas fa-fw fa-user-alt"></i>
             <span>Single Channel</span>
         </a>
