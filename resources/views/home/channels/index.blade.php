@@ -32,6 +32,7 @@
              </div>
 
              @foreach ($channels as $channel)
+
              <div class="col-xl-3 col-sm-6 mb-3">
                 <div class="channels-card">
 
@@ -41,7 +42,7 @@
                             </a>
                      @endif
 
-                     <div class="channels-card-image">
+                        <div class="channels-card-image">
                             <a href="/channels/{{ $channel->id }}">
 
                                 @if($channel->logo !== 'assets/img/s4.png')
@@ -56,7 +57,7 @@
                                         Inscrito <strong>1.4M</strong>
                                     </button>
                             </div>
-                   </div>
+                        </div>
 
                    <div class="channels-card-body">
                       <div class="channels-title">
@@ -68,9 +69,10 @@
                         @endif
                       </div>
                       <div class="channels-view">
-                         100 subscrições
+                         0 subscrições
                       </div>
                    </div>
+
                 </div>
              </div>
              @endforeach

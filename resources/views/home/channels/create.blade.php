@@ -84,7 +84,8 @@
              </div>
           </form>
        </div>
-       <!-- /.container-fluid -->           <!-- Sticky Footer -->
+       <!-- /.container-fluid -->
+       <!-- Sticky Footer -->
             @include('layouts.footer')
          </div>
          <!-- /.content-wrapper -->

@@ -112,7 +112,7 @@ class ChannelController extends Controller
     public function edit(Channel $channel)
     {
         // dd($channel->description);
-        return view('home.channels.edit', ['channel' => $channel ] );
+        return view('home.channels.edit', ['channel' => $channel ]);
     }
 
     /**

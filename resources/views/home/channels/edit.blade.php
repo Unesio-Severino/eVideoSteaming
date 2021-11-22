@@ -63,24 +63,25 @@
                 </div>
              </div>
              <div class="row">
-                <div class="col-sm-6 text-right">
-                    <a href="#" class="btn btn-primary border-none" data-toggle="modal" data-target="#deleteChannelModal{{ $channel->id }}">
+                <div class="col-sm-6 text-left">
+                    <a href="#" class="btn btn-danger border-none" data-toggle="modal" data-target="deletechannelModal{{ $channel->id }}">
 
                     <i class="fa fa-trash"> </i> Apagar
 
                     </a>
                 </div>
 
-                <div class="col-sm-6 text-left">
-                   <a href="/channels" class="btn btn-primary border-none"> Voltar </a>
-                   <a href="/channels/create" class="btn btn-danger border-none"> Cancelar </a>
+                <div class="col-sm-6 text-right">
+                   <a href="/channels" class="btn btn-info border-none"> Voltar </a>
+                   <a href="/channels/create" class="btn btn-warning border-none"> Cancelar </a>
                    <button type="submit" class="btn btn-success border-none"> Actualizar </button>
                 </div>
 
              </div>
           </form>
        </div>
-       <!-- /.container-fluid -->           <!-- Sticky Footer -->
+       <!-- /.container-fluid -->
+       <!-- Sticky Footer -->
             @include('layouts.footer')
             @include('dialogs.confirm-delete-channel-dialog', $channel)
          </div>
