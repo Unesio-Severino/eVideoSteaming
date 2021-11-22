@@ -21,10 +21,11 @@
 
           <div class="row">
                 <div class="col-sm-10 mt-4">
+                    {{-- Funcao para verificar imagem das categorias --}}
                     @if($category->image !== 'assets/img/s2.png')
-                    <img class="rounded-circle avatar-image" src="{{ asset('storage'. $category->image) }}" style="heigh:130px; width: 130px">
+                        <img class="rounded-circle avatar-image" src="{{ asset('storage'. $category->image) }}" style="heigh:130px; width: 130px">
                     @else
-                    <img class="rounded-circle avatar-image" src="{{ asset('assets/img/s2.png') }}" style="heigh:130px; width: 130px">
+                        <img class="rounded-circle avatar-image" src="{{ asset('assets/img/s2.png') }}" style="heigh:130px; width: 130px">
                     @endif
                 </div>
                 <div class="col-sm-6 mt-4">

@@ -42,13 +42,18 @@
                     {{-- Para editar as categorias que ja foram adicionadas pelo usuario --}}
                     @if($category->user_id == auth()->id())
                             <a href="categories/{{$category->id}}/edit" style="position: absolute; right: 30px">
-                            Editar <i class="fa fa-edit" aria-hidden="true"></i>
+                                Editar
                             </a>
                     @endif
                     <div class="category-item mt-0 mb-0">
+                        <a href="javascript:;">
+                            {{-- Funcao para verificar imagens no index --}}
+                            @if($category->image !== 'assets/img/s2.png')
+                              <img class="img-fluid" src="{{ asset('storage'. $category->image) }}" style="heigh:130px; width: 130px">
+                           @else
+                              <img class="img-fluid" src="{{ asset('assets/img/s2.png') }}" style="heigh:130px; width: 130px">
+                           @endif
 
-                        <a href="shop.html">
-                            <img class="img-fluid" src="{{ asset('assets/img/s2.png') }}" alt="">
                             <h6>{{ $category->name }}
 
                                 {{-- verifica se a categoria foi adicionada pelo usuario autenticado --}}
