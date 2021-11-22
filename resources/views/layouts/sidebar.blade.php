@@ -13,12 +13,12 @@
             <span>Channels</span>
         </a>
     </li>
-    {{-- <li class="nav-item">
-        <a class="nav-link" href="/channels/ID">
-            <i class="fas fa-fw fa-user-alt"></i>
-            <span>Single Channel</span>
+    <li class="nav-item">
+        <a class="nav-link" href="/courses">
+            <i class="fas fa-fw fa-graduation-cap"></i>
+            <span>Cursos</span>
         </a>
-    </li> --}}
+    </li>
     <li class="nav-item">
         <a class="nav-link" href="/video-page">
             <i class="fas fa-fw fa-video"></i>

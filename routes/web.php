@@ -57,8 +57,6 @@ Auth::routes(['verify' => true]);
     Route::get('/channels', [App\Http\Controllers\HomeController::class, 'channels'])->name('channels');
 
 
-
-
     Route::post('/profile/update', [App\Http\Controllers\ProfileController::class, 'updateProfile'])->name('profile.update');
 
 
