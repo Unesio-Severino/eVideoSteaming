@@ -27,6 +27,11 @@
                             </div>
                         </div>
                         <h6>Categories</h6>
+
+                    @if(session('message'))
+                         @include('alerts.success-message')
+                    @endif
+
                     </div>
                 </div>
 

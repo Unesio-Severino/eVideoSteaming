@@ -12,7 +12,7 @@
           </div>
 
             @if (session('message'))
-               @include('alerts.success-messages')
+               @include('alerts.success-message')
             @endif
 
           <form method="POST" action="{{ route('categories.store') }}" enctype="multipart/form-data">

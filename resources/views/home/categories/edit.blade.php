@@ -14,17 +14,18 @@
             @if(session('message'))
                @include('alerts.success-message')
             @endif
+
           <form method="POST" action="{{ route('categories.update', ['category' => $category->id ]) }}" role="form" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
           <div class="row">
                 <div class="col-sm-10 mt-4">
-                @if($category->image !== 'assets/img/s2.png')
-                  <img class="rounded-circle avatar-image" src="{{ asset('storage'. $category->image) }}" style="heigh:130px; width: 130px">
-                @else
-                  <img class="rounded-circle avatar-image" src="{{ asset('assets/img/s2.png') }}" style="heigh:130px; width: 130px">
-                @endif
+                    @if($category->image !== 'assets/img/s2.png')
+                    <img class="rounded-circle avatar-image" src="{{ asset('storage'. $category->image) }}" style="heigh:130px; width: 130px">
+                    @else
+                    <img class="rounded-circle avatar-image" src="{{ asset('assets/img/s2.png') }}" style="heigh:130px; width: 130px">
+                    @endif
                 </div>
                 <div class="col-sm-6 mt-4">
                    <div class="form-group">
@@ -64,21 +65,23 @@
                 </div>
              </div>
              <div class="row">
-             <div class="col-sm-6 text-left">
-             <a href="#" class="btn btn-danger border-none" data-toggle="modal" data-target="#deleteCategoryModal{{ $category->id }}">
-                   <i class="fa fa-trash"> </i> Apagar </a>
+                <div class="col-sm-6 text-left">
+                    <a href="#" class="btn btn-danger border-none" data-toggle="modal" data-target="#deleteCategoryModal{{ $category->id }}">
+                    <i class="fa fa-trash"></i> Apagar
+                    </a>
                 </div>
                 <div class="col-sm-6 text-right">
-                   <a href="/categories" class="btn btn-info border-none"> Voltar </a>
-                   <a href="/categories/create" class="btn btn-warning border-none"> Cancelar </a>
-                   <button type="submit" class="btn btn-success border-none"> Actualizar </button>
+                    <a href="/categories" class="btn btn-info border-none"> Voltar </a>
+                    <a href="/categories/create" class="btn btn-warning border-none"> Cancelar </a>
+                    <button type="submit" class="btn btn-success border-none"> Actualizar </button>
                 </div>
              </div>
           </form>
        </div>
-       <!-- /.container-fluid -->           <!-- Sticky Footer -->
+       <!-- /.container-fluid -->
+       <!-- Sticky Footer -->
             @include('layouts.footer')
-            {{-- @include('dialogs.confirm-delete-category-dialog', $category) --}}
+            @include('dialogs.confirm-delete-category-dialog', $category)
          </div>
          <!-- /.content-wrapper -->
 @endsection
