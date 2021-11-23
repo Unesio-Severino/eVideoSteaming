@@ -60,7 +60,7 @@ class VideoController extends Controller
                 $video->user_id     =   auth()->id();
                 $video->video_url   =   $this->handleVideoUpload($file, $name);
                 $video->duration    =   $this->getVideoDuration($videoPath);
-                $video->image_url   =   $this->getVideoThumbnail($videoPath, $name);
+                // $video->image_url   =   $this->getVideoThumbnail($videoPath, $name);
 
                 $video->save();
             }
@@ -74,21 +74,9 @@ class VideoController extends Controller
     }
 
     // Run this on terminal: $ composer require pbmedia/laravel-ffmpeg   && then $ php artisan vendor:publish --provider="ProtoneMedia\LaravelFFMpeg\Support\ServiceProvider"
-    private function getVideoThumbnail($videoPath, $name)
-    {
-        $videoImagePath = '/uploads/videos_image/' . $name . '.png';
 
-        FFMpeg::fromDisk('public')
-            ->open($videoPath)
-            ->getFrameFromSeconds(15)
-            ->export()
-            ->toDisk('public')
-            ->save($videoImagePath);
 
-        return $videoImagePath;
-    }
-
-    //Run this on terminal: $ composer require james-heinrich/getid3
+    // Run this on terminal: $ composer require james-heinrich/getid3
     private function getVideoDuration($videoPath)
     {
         $getID3 = new \getID3;

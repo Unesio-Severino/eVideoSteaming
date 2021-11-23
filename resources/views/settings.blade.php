@@ -12,7 +12,7 @@
           </div>
 
             @if (session('message'))
-               @include('alerts.sucess-messages')
+               @include('alerts.success-message')
             @endif
 
           <form method="POST" action="{{ route('profile.update') }}" enctype="multipart/form-data">
