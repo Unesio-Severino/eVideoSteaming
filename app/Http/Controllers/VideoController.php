@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Video;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Traits\UploadVideos;
-use Illuminate\Http\Request;
+use Storage;
+use FFMpeg;
 
 class VideoController extends Controller
 {
@@ -41,9 +43,9 @@ class VideoController extends Controller
 
         $files = $request->file('videos');
 
-        if($files){
+        if ($files) {
 
-            foreach ($files as $file){
+            foreach ($files as $file) {
 
                 // Make a image name based on user name and current timestamp
                 $name = Str::random(16);
@@ -64,28 +66,51 @@ class VideoController extends Controller
             }
 
             //(10) videos carregados com sucesso
-            return redirect()->back()->with(['message' => '('. count($files). ') videos carregados com sucesso. ']);
-
+            return redirect()->back()->with(['message' => '(' . count($files) . ') videos carregados com sucesso. ']);
         } else {
 
             return redirect()->back()->with(['message' => 'Nenhum video foi selecionado. Por favor, selecione videos primeiro!!!']);
-            }
+        }
+    }
 
+    // Run this on terminal: $ composer require pbmedia/laravel-ffmpeg   && then $ php artisan vendor:publish --provider="ProtoneMedia\LaravelFFMpeg\Support\ServiceProvider"
+    private function getVideoThumbnail($videoPath, $name)
+    {
+        $videoImagePath = '/uploads/videos_image/' . $name . '.png';
+
+        FFMpeg::fromDisk('public')
+            ->open($videoPath)
+            ->getFrameFromSeconds(15)
+            ->export()
+            ->toDisk('public')
+            ->save($videoImagePath);
+
+        return $videoImagePath;
+    }
+
+    //Run this on terminal: $ composer require james-heinrich/getid3
+    private function getVideoDuration($videoPath)
+    {
+        $getID3 = new \getID3;
+        $file = $getID3->analyze('storage' . $videoPath);
+        // $duration = date('H:i:s.v', $file['playtime_seconds']);
+        $duration = date('H:i:s', $file['playtime_seconds']);
+        return $duration;
     }
 
     private function handleVideoUpload($video, $name)
-
     {
-            // Define folder path
-            $folder = '/uploads/videos/';
-            // Make a file path where image will be stored [ folder path + file name + file extension]
-            $filePath = $folder . $name. '.' . $video->getClientOriginalExtension();
-            // Upload image
-            $this->uploadVideo($video, $folder, 'public', $name);
+        // Define folder path
+        $folder = '/uploads/videos/';
+        // Make a file path where image will be stored [ folder path + file name + file extension]
+        $filePath = $folder . $name . '.' . $video->getClientOriginalExtension();
+        // Upload image
+        $this->uploadVideos($video, $folder, 'public', $name);
 
         return $filePath;
-
     }
+
+
 
     /**
      * Display the specified resource.

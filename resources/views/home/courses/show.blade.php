@@ -38,7 +38,7 @@
                                       <div class="mt-4">
                                          <button class="btn btn-outline-primary" type="submit">Gravar os videos</button>
                                       </div>
-                                      
+
                                    </div>
                                 </div>
                              </form>
@@ -146,42 +146,44 @@
                                        336 x 280
                                     </div>
                                  </div>
+
                                  <div class="main-title">
                                     <div class="btn-group float-right right-action">
                                        <a href="#" class="right-action-link text-gray" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                        Sort by <i class="fa fa-caret-down" aria-hidden="true"></i>
                                        </a>
                                        <div class="dropdown-menu dropdown-menu-right">
-                                          <a class="dropdown-item" href="#"><i class="fas fa-fw fa-star"></i> &nbsp; Top Rated</a>
-                                          <a class="dropdown-item" href="#"><i class="fas fa-fw fa-signal"></i> &nbsp; Viewed</a>
-                                          <a class="dropdown-item" href="#"><i class="fas fa-fw fa-times-circle"></i> &nbsp; Close</a>
+                                          <a class="dropdown-item" href="#"><i class="fas fa-fw fa-star"></i> Top Rated</a>
+                                          <a class="dropdown-item" href="#"><i class="fas fa-fw fa-signal"></i> Viewed</a>
+                                          <a class="dropdown-item" href="#"><i class="fas fa-fw fa-times-circle"></i> Close</a>
                                        </div>
                                     </div>
                                     <h6>Up Next</h6>
                                  </div>
+
                               </div>
-                              <div class="col-md-12">
-{{--
-                              @foreach($course->videos as $index => $video)
+                            <div class="col-md-12">
 
-                              @if($index > 0 && $index % 5 === 0 )
-                                 <div class="adblock mt-0">
-                                    <div class="img">
-                                       Google AdSense<br>
-                                       336 x 280
-                                    </div>
-                                 </div>
-                              @endif --}}
+                            @foreach($course->videos as $index => $video)
 
-                                 <div class="video-card video-card-list">
+                                    @if($index > 0 && $index % 5 === 0 )
+                                        <div class="adblock mt-0">
+                                            <div class="img">
+                                            Google AdSense<br>
+                                            336 x 280
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                <div class="video-card video-card-list">
                                     <div class="video-card-image">
                                        <a class="play-icon" href="#"><i class="fas fa-play-circle"></i></a>
                                        <a href="#">
-                                          {{-- @if($video->image_url)
+                                          @if($video->image_url)
                                              <img class="img-fluid" src="{{ asset('storage'. $video->image_url) }}" alt="">
                                           @else
                                              <img class="img-fluid" src="{{ asset('assets/img/v1.png') }}" alt="">
-                                          @endif --}}
+                                          @endif
                                        </a>
                                        <div class="time"></div>
                                     </div>
@@ -206,8 +208,8 @@
                                           1.8M views &nbsp;<i class="fas fa-calendar-alt"></i> 11 Months ago
                                        </div>
                                     </div>
-                                 </div>
-                              {{-- @endforeach --}}
+                                </div>
+                             @endforeach
 
                               </div>
                            </div>
