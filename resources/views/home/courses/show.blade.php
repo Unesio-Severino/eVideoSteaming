@@ -36,7 +36,7 @@
                                       <input type="hidden" name="course_id" value=" {{ $course->id }}" >
 
                                       <div class="mt-4">
-                                         <button class="btn btn-outline-primary" type="submit">Gravar os videos</button>
+                                         <button class="btn btn-success" type="submit">Gravar os videos</button>
                                       </div>
 
                                    </div>
@@ -187,7 +187,7 @@
                                             @endif
 
                                         </a>
-                                        <div class="time"></div>
+                                        <div class="time">{{ $video->duration }}</div>
                                         </div>
                                         <div class="video-card-body">
                                             <div class="btn-group float-right right-action">

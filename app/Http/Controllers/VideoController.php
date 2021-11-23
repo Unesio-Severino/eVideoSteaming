@@ -6,7 +6,6 @@ use App\Models\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Traits\UploadVideos;
-use Storage;
 use FFMpeg;
 
 class VideoController extends Controller
@@ -60,7 +59,7 @@ class VideoController extends Controller
                 $video->user_id     =   auth()->id();
                 $video->video_url   =   $this->handleVideoUpload($file, $name);
                 $video->duration    =   $this->getVideoDuration($videoPath);
-                // $video->image_url   =   $this->getVideoThumbnail($videoPath, $name);
+                $video->image_url   =   $this->getVideoThumbnail($videoPath, $name);
 
                 $video->save();
             }
@@ -75,6 +74,19 @@ class VideoController extends Controller
 
     // Run this on terminal: $ composer require pbmedia/laravel-ffmpeg   && then $ php artisan vendor:publish --provider="ProtoneMedia\LaravelFFMpeg\Support\ServiceProvider"
 
+    private function getVideoThumbnail($videoPath, $name)
+    {
+        $videoImagePath = '/uploads/videos_image/' . $name . '.png';
+
+        FFMpeg::fromDisk('public')
+            ->open($videoPath)
+            ->getFrameFromSeconds(15)
+            ->export()
+            ->toDisk('public')
+            ->save($videoImagePath);
+
+        return $videoImagePath;
+    }
 
     // Run this on terminal: $ composer require james-heinrich/getid3
     private function getVideoDuration($videoPath)
@@ -97,8 +109,6 @@ class VideoController extends Controller
 
         return $filePath;
     }
-
-
 
     /**
      * Display the specified resource.
