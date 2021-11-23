@@ -1,2 +1,2 @@
 # eVideoSteaming
- Plataformas de videos e cursos em videos
+ Plataforma de Streaming e Postagem de Videos e Cursos com Laravel + VueJs.
