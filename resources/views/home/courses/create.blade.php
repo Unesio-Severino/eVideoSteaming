@@ -4,31 +4,33 @@
 
 <div id="content-wrapper">
     <div class="container-fluid upload-details">
-        <div class="row">
-            <div class="col-lg-12 pb-1">
-                <div class="main-title">
-                    <h6><strong>Adição de Cursos</strong></h6>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="imgplace"></div>
-            </div>
-            <div class="col-lg-10">
-                <div class="osahan-title text-danger text-right">Esta no modo rascunho (A publicacao pode levar ate 15
-                    dias):</div>
-                <div class="form-group mt-3">
-                    <label for="e1">Adiciona a imagem do Curso:</label>
-                    <input type="file" placeholder="Título" id="e1" name="image" class="form-control">
-                </div>
-
-            </div>
-        </div>
-        <hr>
-        @if (session('message'))
-            @include('alerts.success-message')
-        @endif
 
         <form action="{{ route('courses.store') }}" method="POST" role="form" enctype="multipart/form-data">
+
+            <div class="row">
+                <div class="col-lg-12 pb-1">
+                    <div class="main-title">
+                        <h6><strong>Adição de Cursos</strong></h6>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="imgplace"></div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="osahan-title text-danger text-right">Esta no modo rascunho (A publicacao pode levar ate 15
+                        dias):</div>
+                    <div class="form-group mt-3">
+                        <label for="e1">Adiciona a imagem do Curso:</label>
+                        <input type="file" placeholder="Título" id="e1" name="image" class="form-control">
+                    </div>
+
+                </div>
+            </div>
+            <hr>
+            @if (session('message'))
+                @include('alerts.success-message')
+            @endif
+
             @csrf
             <div class="row">
                 <div class="col-lg-12">
@@ -175,7 +177,7 @@
                 </div>
         </form>
     </div>
-    </form>
+
 </div>
 <!-- /.container-fluid -->
 
