@@ -29,10 +29,10 @@
           <span class="badge badge-danger">9+</span>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
-             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-edit "></i> Action</a>
-             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-headphones-alt "></i> Another action</a>
+             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-edit "></i> &nbsp; Action</a>
+             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-headphones-alt "></i> &nbsp; Another action</a>
              <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-star "></i> Something else here</a>
+             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-star "></i> &nbsp; Something else here</a>
           </div>
        </li>
        <li class="nav-item dropdown no-arrow mx-1">
@@ -41,15 +41,14 @@
           <span class="badge badge-success">7</span>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
-             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-edit "></i> Action</a>
-             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-headphones-alt "></i> Another action</a>
+             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-edit "></i> &nbsp; Action</a>
+             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-headphones-alt "></i> &nbsp; Another action</a>
              <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-star "></i> Something else here</a>
+             <a class="dropdown-item" href="#"><i class="fas fa-fw fa-star "></i> &nbsp; Something else here</a>
           </div>
        </li>
        <li class="nav-item dropdown no-arrow osahan-right-navbar-user">
-
-        @if(Auth::check())
+       @if(Auth::check())
           <a class="nav-link dropdown-toggle user-dropdown-link" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
           @if(auth()->user()->avatar)
@@ -60,13 +59,12 @@
              {{ auth()->user()->name }}
           </a>
        @endif
-
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-             <a class="dropdown-item" href="/account"><i class="fas fa-fw fa-user-circle"></i> Minha conta</a>
-             <a class="dropdown-item" href="/subscriptions"><i class="fas fa-fw fa-video"></i> Subscrições</a>
-             <a class="dropdown-item" href="/settings"><i class="fas fa-fw fa-cog"></i> Definições</a>
+             <a class="dropdown-item" href="/account"><i class="fas fa-fw fa-user-circle"></i> &nbsp; Minha conta</a>
+             <a class="dropdown-item" href="/subscriptions"><i class="fas fa-fw fa-video"></i> &nbsp; Subscrições</a>
+             <a class="dropdown-item" href="/settings"><i class="fas fa-fw fa-cog"></i> &nbsp; Definições</a>
              <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-fw fa-sign-out-alt"></i> Sair</a>
+             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-fw fa-sign-out-alt"></i> &nbsp; Sair</a>
           </div>
        </li>
     </ul>

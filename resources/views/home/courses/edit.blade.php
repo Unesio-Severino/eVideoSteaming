@@ -145,7 +145,7 @@
                                <a href="#" class="btn btn-danger border-none" data-toggle="modal" data-target="#deleteCourseModal{{ $course->id }}">
                                   <i class="fa fa-trash"> </i> Apagar
                                </a>
-                                  <button class="btn btn-success text-right">
+                                    <button class="btn btn-success text-right">
                                       Gravar e continuar
                                     </button>
                             </div>
@@ -156,12 +156,12 @@
                             </div>
                          </div>
                         </div>
-                   </form>
+
 
 
         </div>
         <!-- /.container-fluid -->
-
+        <hr>
            <!-- Sticky Footer -->
         <footer class="sticky-footer">
             <div class="container">

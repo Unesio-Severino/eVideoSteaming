@@ -19,9 +19,9 @@
                   </div>
             </div>
 
-            @if (session('message'))
-                        @include('alerts.success-message')
-             @endif
+                @if (session('message'))
+                    @include('alerts.success-message')
+                @endif
 
               <div class="video-block section-padding" style="min-height: 485px">
                   <div class="row">
@@ -50,8 +50,8 @@
                     <div class="col-xl-3 col-sm-6 mb-3">
                         <div class="video-card">
                            <div class="video-card-image">
-                              <a class="play-icon" href="#"><i class="fas fa-play-circle"></i></a>
-                              <a href="#">
+                              <a class="play-icon" href="/courses/{{$course->id }}"><i class="fas fa-play-circle"></i></a>
+                              <a href="/courses/{{$course->id }}">
                                   @if($course->image)
                                     <img class="img-fluid" style="height: 180px" src="{{ asset('storage' . $course->image) }}" alt="">
                                   @else
@@ -62,7 +62,7 @@
                            </div>
                            <div class="video-card-body">
                               <div class="video-title">
-                                 <a href="#" style="color: rgba(0,0,0, .5) !important;">
+                                 <a href="/courses/{{$course->id }}" style="color: rgba(0,0,0, .5) !important;">
                                      {{ $course->title }}
                                  </a>
                                  <a class="float-right" href="/courses/{{ $course->id }}/edit"><i class="fas fa-edit"></i></a>
