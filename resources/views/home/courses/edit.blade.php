@@ -17,7 +17,7 @@
                       </div>
                       <div class="col-lg-2 pb-1">
                                @if($course->image)
-                                  <img class="img-fluid" style="height: 120px; width:200px" src="{{ asset('storage'. $course->image) }}" alt="">
+                                  <img class="img-fluid" style="height: 120px; width: 200px" src="{{ asset('storage'. $course->image) }}" alt="">
                                @else
                                   <div class="imgplace"></div>
                                @endif
@@ -157,11 +157,35 @@
                          </div>
                         </div>
                    </form>
+
+
         </div>
         <!-- /.container-fluid -->
-        @include('layouts.footer')
+
+           <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+            <div class="container">
+            <div class="row no-gutters">
+                <div class="col-lg-6 col-sm-6">
+                    <p class="mt-1 mb-0"><strong class="text-dark">eVidoeSteaming</strong>.
+                        <small class="mt-0 mb-0"><a class="text-primary" target="_blank" href="https://github.com/Unesio-Severino/eVideoSteaming">Unesio Mucutueliua Development</a>
+                        </small>
+                    </p>
+                </div>
+                <div class="col-lg-6 col-sm-6 text-right">
+                    <div class="app">
+                        <a href="#"><img alt="" src="{{ asset('assets/img/google.png') }}"></a>
+                        <a href="#"><img alt="" src="{{ asset('assets/img/apple.png') }}"></a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </footer>
+
 
         @include('dialogs.confirm-delete-course-dialog', $course)
+
+
     </div>
 <!-- /.content-wrapper -->
 @endsection

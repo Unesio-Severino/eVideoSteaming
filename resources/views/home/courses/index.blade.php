@@ -51,7 +51,13 @@
                         <div class="video-card">
                            <div class="video-card-image">
                               <a class="play-icon" href="#"><i class="fas fa-play-circle"></i></a>
-                              <a href="#"><img class="img-fluid" src="{{ asset('assets/img/v1.png') }}" alt=""></a>
+                              <a href="#">
+                                  @if($course->image)
+                                    <img class="img-fluid" style="height: 180px" src="{{ asset('storage' . $course->image) }}" alt="">
+                                  @else
+                                     <img class="img-fluid" style="height: 180px" src="{{ asset('assets/img/v1.png') }}" alt="">
+                                  @endif
+                              </a>
                               <div class="time">{{ $course->total_videos }} Videos</div>
                            </div>
                            <div class="video-card-body">

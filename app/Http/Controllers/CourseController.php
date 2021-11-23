@@ -72,7 +72,7 @@ class CourseController extends Controller
         ]));
 
         if ($filePath = $this->handleImageUpload($request, $course)) {
-            $course->save();
+            $course->update();
         }
 
         return redirect()->to('/courses')->with(['message' => 'Curso adicionado com sucesso']);
